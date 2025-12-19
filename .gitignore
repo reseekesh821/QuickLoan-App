@@ -1,0 +1,15 @@
+# Ignore python virtual environment
+backend/venv/
+backend/__pycache__/
+*.pyc
+
+# Ignore node modules (heavy files)
+frontend/node_modules/
+frontend/dist/
+
+# Ignore database (security)
+*.db
+*.sqlite3
+
+# Ignore system files
+.DS_Store
