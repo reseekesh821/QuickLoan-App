@@ -102,6 +102,14 @@ def read_root():
 # Public Route (Anyone can apply)
 @app.post("/loans/apply")
 def apply_for_loan(application: loan_schema.LoanCreate, db: Session = Depends(get_db)):
+    
+    # limitaqtions on applying
+    if application.amount > 10000:
+        raise HTTPException(
+            status_code=400, 
+            detail="Loan limit exceeded. The maximum allowed loan is $10,000."
+        )
+
     new_loan = loan_model.Loan(
         full_name=application.full_name,
         amount=application.amount,
