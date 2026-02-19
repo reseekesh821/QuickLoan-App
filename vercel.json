@@ -19,7 +19,7 @@
       "destination": "/backend/main.py"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/|assets/|vite.svg|favicon.ico).*)",
       "destination": "/index.html"
     }
   ]
